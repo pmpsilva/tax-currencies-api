@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    serialization.indent_output: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+
+server:
+  port: 8088
+  servlet:
+    context-path: /tax

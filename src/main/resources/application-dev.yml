@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    serialization.indent_output: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tax
+    username: flyuser
+    password: 12345
