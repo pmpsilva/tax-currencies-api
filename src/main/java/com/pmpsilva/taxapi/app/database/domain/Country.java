@@ -1,5 +1,6 @@
 package com.pmpsilva.taxapi.app.database.domain;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -21,8 +22,11 @@ public class Country  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+    @ApiModelProperty(notes = "code of country", value = "PT")
     private String code;
+    @ApiModelProperty(notes = "name of country", value = "Portugal")
     private String name;
+    @ApiModelProperty(notes = "Iso name of country",value = "PRT")
     private String isoName;
 
     @ManyToOne(fetch = FetchType.EAGER)

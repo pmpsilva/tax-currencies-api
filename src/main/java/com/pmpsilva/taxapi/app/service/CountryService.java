@@ -16,5 +16,24 @@ public class CountryService {
         return repository.findAll();
     }
 
+    public Country findCountryByCode(String code){
+        return repository.findCountryByCodeIgnoreCase(code).get();
+    }
+
+    public Country findCountryByName(String name){
+        return repository.findCountryByNameIgnoreCase(name).get();
+    }
+
+    public Country findCountryByIsoCode(String isoCode){
+        return repository.findCountryByIsoNameIgnoreCase(isoCode).get();
+    }
+    public Country findCountryByLanguageCode(String isoCode){
+        return repository.findCountryByLanguageCodeIgnoreCase(isoCode).get();
+    }
+
+    public Country findCountryByCurrency(String name){
+        return repository.findCountryByCurrencyCodeIgnoreCase(name).get();
+    }
+
 
 }
