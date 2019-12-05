@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "currencies")
 public class Currency implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String code;
     private String symbol;

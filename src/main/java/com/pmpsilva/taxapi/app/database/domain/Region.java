@@ -15,24 +15,19 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name = "countries")
-public class Country implements Serializable {
+@Table(name = "regions")
+public class Region implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @ApiModelProperty(notes = "code of country", value = "PT")
+
+    @ApiModelProperty(notes = "code of region", value = "PT_MA")
     private String code;
-    @ApiModelProperty(notes = "name of country", value = "Portugal")
+    @ApiModelProperty(notes = "name of region", value = "Madeira")
     private String name;
-    @ApiModelProperty(notes = "Iso name of country", value = "PRT")
-    private String isoName;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "language_id")
-    private Language language;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "currencie_id")
-    private Currency currency;
+    @JoinColumn(name = "country_id")
+    private Country country;
 
 }

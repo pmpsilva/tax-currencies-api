@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "languages")
 public class Language implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String code;
     private String englishName;

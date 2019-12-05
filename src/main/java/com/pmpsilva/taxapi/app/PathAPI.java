@@ -11,4 +11,5 @@ public final class PathAPI {
     public static final String LANG_CODE = "/lang/{code}";
     public static final String CURRENCY_NAME = "/currency/{name}";
     public static final String REGION = "/region";
+    public static final String TAX = "/tax";
 }
