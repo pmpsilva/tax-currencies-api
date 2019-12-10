@@ -1,5 +1,6 @@
 package com.pmpsilva.taxapi.app.database.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -14,7 +15,8 @@ import java.io.Serializable;
 @Table(name = "languages")
 public class Language implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private int id;
     private String code;
     private String englishName;

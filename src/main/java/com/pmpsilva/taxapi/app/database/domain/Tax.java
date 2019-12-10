@@ -1,5 +1,7 @@
 package com.pmpsilva.taxapi.app.database.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -17,9 +19,12 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "taxes")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tax implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY
+    )
+    @JsonIgnore
     private int id;
     @ApiModelProperty(notes = "name of tax", value = "IVA")
     private String name;

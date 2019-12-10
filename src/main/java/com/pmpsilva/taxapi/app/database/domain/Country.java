@@ -1,5 +1,6 @@
 package com.pmpsilva.taxapi.app.database.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -18,7 +19,8 @@ import java.io.Serializable;
 @Table(name = "countries")
 public class Country implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private int id;
     @ApiModelProperty(notes = "code of country", value = "PT")
     private String code;

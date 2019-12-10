@@ -21,7 +21,7 @@ public class RegionController {
     private RegionService service;
 
     @GetMapping
-    @ApiOperation(value = "Get all regions", nickname = "findAllRegions", response = Country.class)
+    @ApiOperation(value = "Get all regions", nickname = "findAllRegions", response = Region.class)
     public List<Region> findAllRegions(){
         return service.findAllRegions();
     }

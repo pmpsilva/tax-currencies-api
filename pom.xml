@@ -66,6 +66,11 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+		<dependency>
+			<groupId>net.rakugakibox.spring.boot</groupId>
+			<artifactId>logback-access-spring-boot-starter</artifactId>
+			<version>2.7.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
