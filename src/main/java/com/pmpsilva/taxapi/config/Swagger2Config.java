@@ -1,11 +1,13 @@
 package com.pmpsilva.taxapi.config;
 
 
+import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -25,7 +27,7 @@ public class Swagger2Config {
                 .consumes(Sets.newHashSet("application/json"))
                 .produces(Sets.newHashSet("application/json"))
                 .select()
-                .apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot")))
+                .apis(Predicates.not((Predicate<RequestHandler>) RequestHandlerSelectors.basePackage("org.springframework.boot")))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(metaData());
