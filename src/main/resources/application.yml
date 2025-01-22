@@ -1,19 +1,32 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /tax
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  file:
+    name: logs/app.log
+
 spring:
-  profiles:
-    active: dev
+  application:
+    name: tax-api
   devtools:
     restart:
       enabled: true
   jackson:
     serialization.indent_output: true
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: POSTGRESQL
-
-server:
-  port: 8088
-  servlet:
-    context-path: /tax
-
-
-  Logging.level.com.pmpsilva.taxapi: debug
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:15432}/${POSTGRES_DB:tax}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:Q12345}
+    driver-class-name: org.postgresql.Driver
